@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\tree">
+      <UniqueIdentifier>{1590754c-f325-4e16-a419-cf1983b5821f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\tree">
+      <UniqueIdentifier>{ecc53b3f-5afb-4053-9837-1e074b69f998}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\list">
+      <UniqueIdentifier>{dc86bc85-0bb8-4ae5-be37-1ade812b7dca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\list">
+      <UniqueIdentifier>{d10730b4-efa7-4584-802d-c39f19d347e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Graph">
+      <UniqueIdentifier>{5c50696a-573f-41be-b135-47d7a05796c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Graph">
+      <UniqueIdentifier>{fe8250a0-559a-4125-ba45-4d6528d409f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Math">
+      <UniqueIdentifier>{f10f2424-0a9e-434a-948a-8fe79bab2b8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Math">
+      <UniqueIdentifier>{532c528e-a028-45b7-9033-0a7703d534f4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BiTree.h">
+      <Filter>头文件\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="CSTree.h">
+      <Filter>头文件\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadBiTree.h">
+      <Filter>头文件\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="UnionFindSet.h">
+      <Filter>头文件\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="BinarySortTree.h">
+      <Filter>头文件\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="SelfBalancingBinarySearchTree.h">
+      <Filter>头文件\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="HuffmanTree.h">
+      <Filter>头文件\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="CycleQueue.h">
+      <Filter>头文件\list</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph.h">
+      <Filter>头文件\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphMatrix.h">
+      <Filter>头文件\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphAdjacentLink.h">
+      <Filter>头文件\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="Arraylist.h">
+      <Filter>头文件\list</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkList.h">
+      <Filter>头文件\list</Filter>
+    </ClInclude>
+    <ClInclude Include="List.h">
+      <Filter>头文件\list</Filter>
+    </ClInclude>
+    <ClInclude Include="SearchAndMatch.h">
+      <Filter>头文件\list</Filter>
+    </ClInclude>
+    <ClInclude Include="Heap.h">
+      <Filter>头文件\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomNumber.h">
+      <Filter>头文件\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix.h">
+      <Filter>头文件\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="GrapgAll.h">
+      <Filter>头文件\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="ListAll.h">
+      <Filter>头文件\list</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>头文件\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MathAll.h">
+      <Filter>头文件\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MathOthers.h">
+      <Filter>头文件\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeAll.h">
+      <Filter>头文件\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="All.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StackLink.h">
+      <Filter>头文件\list</Filter>
+    </ClInclude>
+    <ClInclude Include="QueueLink.h">
+      <Filter>头文件\list</Filter>
+    </ClInclude>
+    <ClInclude Include="BiTreeV2.h">
+      <Filter>头文件\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="BiTreeNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BiTree.cpp">
+      <Filter>源文件\tree</Filter>
+    </ClCompile>
+    <ClCompile Include="CSTree.cpp">
+      <Filter>源文件\tree</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadBiTree.cpp">
+      <Filter>源文件\tree</Filter>
+    </ClCompile>
+    <ClCompile Include="UnionFindSet.cpp">
+      <Filter>源文件\tree</Filter>
+    </ClCompile>
+    <ClCompile Include="BinarySortTree.cpp">
+      <Filter>源文件\tree</Filter>
+    </ClCompile>
+    <ClCompile Include="SelfBalancingBinarySearchTree.cpp">
+      <Filter>源文件\tree</Filter>
+    </ClCompile>
+    <ClCompile Include="HuffmanTree.cpp">
+      <Filter>源文件\tree</Filter>
+    </ClCompile>
+    <ClCompile Include="CycleQueue.cpp">
+      <Filter>源文件\list</Filter>
+    </ClCompile>
+    <ClCompile Include="Graph.cpp">
+      <Filter>源文件\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphInputFile.cpp">
+      <Filter>源文件\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphMatrix.cpp">
+      <Filter>源文件\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphAdjacentLink.cpp">
+      <Filter>源文件\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="Arraylist.cpp">
+      <Filter>源文件\list</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkList.cpp">
+      <Filter>源文件\list</Filter>
+    </ClCompile>
+    <ClCompile Include="List.cpp">
+      <Filter>源文件\list</Filter>
+    </ClCompile>
+    <ClCompile Include="SeachAndMatch.cpp">
+      <Filter>源文件\list</Filter>
+    </ClCompile>
+    <ClCompile Include="Heap.cpp">
+      <Filter>源文件\tree</Filter>
+    </ClCompile>
+    <ClCompile Include="RandomNumber.cpp">
+      <Filter>源文件\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="MatrixInputFIle.cpp">
+      <Filter>源文件\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix.cpp">
+      <Filter>源文件\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MathOthers.h.cpp">
+      <Filter>源文件\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="StackLink.cpp">
+      <Filter>源文件\list</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector.cpp">
+      <Filter>源文件\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="QueueLink.cpp">
+      <Filter>源文件\list</Filter>
+    </ClCompile>
+    <ClCompile Include="BiTreeV2.cpp">
+      <Filter>源文件\tree</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DSpractice.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
