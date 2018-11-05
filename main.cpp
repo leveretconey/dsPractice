@@ -5,9 +5,8 @@ using namespace std;
 
 int main()
 {
-	BiTreeV2 *bt = new BiTreeV2;
-	bt->CreateFromString("1234567+8");
-	bt->ShowAllData(BiTreeV2::POST_ORDER);
+	int a = INT_MIN;
+	cout << abs( a);
 
 	while (1);
 	return 0;
