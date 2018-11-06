@@ -164,6 +164,7 @@
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="QueueLink.h" />
     <ClInclude Include="RandomNumber.h" />
+    <ClInclude Include="RBTree.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SearchAndMatch.h" />
     <ClInclude Include="SelfBalancingBinarySearchTree.h" />
@@ -195,6 +196,7 @@
     <ClCompile Include="MatrixInputFIle.cpp" />
     <ClCompile Include="QueueLink.cpp" />
     <ClCompile Include="RandomNumber.cpp" />
+    <ClCompile Include="RBTree.cpp" />
     <ClCompile Include="SeachAndMatch.cpp" />
     <ClCompile Include="SelfBalancingBinarySearchTree.cpp" />
     <ClCompile Include="StackLink.cpp" />
