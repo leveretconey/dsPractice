@@ -127,7 +127,6 @@ int BinarySortTree::DeleteBSTreeNodeWithValue(int value)
 				node_victim = node_to_delete->rchild;
 				while (node_victim->lchild != NULL)
 					node_victim = node_victim->lchild;
-
 				node_to_delete->data = node_victim->data;
 				node_to_delete = node_victim;
 				break;

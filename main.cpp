@@ -2,15 +2,13 @@
 #include <iostream>
 #include "All.h"
 using namespace std;
+using namespace leveretconey;
 
 int main()
 {
-	int a = 0x12345678;
-	char *p = (char *)&a;
-	for (int i = 0; i < 4; i++) {
-		cout << (int *)(p + i) << "  " << (int)*(p + i) << endl;
-	}
+	RBTree tree;
+	tree.createFromFile("input.txt");
+	tree.show();
 
-	while (1);
 	return 0;
 }
