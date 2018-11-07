@@ -120,6 +120,72 @@ void leveretconey::RBTree::adjustInsert(RBTreeNodePointer node)
 		}
 	}
 }
+void leveretconey::RBTree::adjustDelete(RBTreeNodePointer node)
+{
+	//todo
+	while(node != root && node->color==BLACK){
+		if (node == node->parent->left) {
+			RBTreeNodePointer brother = node->parent->right;
+			if (brother->color == RED)
+			{//case 1
+				brother->color = BLACK;
+				node->parent->color = RED;
+				rotateLeft(node->parent);
+				brother = node->parent->right;
+			}
+			if (brother->left->color == BLACK && brother->right->color == BLACK) {
+				//case 2 
+				brother->color = RED;
+				node = node->parent;
+			}
+			else {
+				if (brother->right->color == BLACK) {
+					//case 3
+					brother->left->color = BLACK;
+					brother->color = RED;
+					rotateRight(brother);
+					brother = node->parent->right;
+				}
+				//case 4
+				brother->color = node->parent->color;
+				node->parent->color = BLACK;
+				brother->right->color = BLACK;
+				rotateLeft(node->parent);
+				node = root;
+			}
+		 }//if
+		else {
+			RBTreeNodePointer brother = node->parent->left;
+			if (brother->color == RED)
+			{//case 1
+				brother->color = BLACK;
+				node->parent->color = RED;
+				rotateRight(node->parent);
+				brother = node->parent->left;
+			}
+			if (brother->left->color == BLACK && brother->right->color == BLACK) {
+				//case 2 
+				brother->color = RED;
+				node = node->parent;
+			}
+			else {
+				if (brother->left->color == BLACK) {
+					//case 3
+					brother->right->color = BLACK;
+					brother->color = RED;
+					rotateLeft(brother);
+					brother = node->parent->left;
+				}
+				//case 4
+				brother->color = node->parent->color;
+				node->parent->color = BLACK;
+				brother->left->color = BLACK;
+				rotateRight(node->parent);
+				node = root;
+			}
+		}
+	}//while
+}
 void leveretconey::RBTree::traversePre(RBTreeNodePointer node, void(*callback)(RBTreeNodePointer))
 {
 	if (node != nil) {
@@ -143,6 +209,18 @@ void leveretconey::RBTree::traversePost(RBTreeNodePointer node, void(*callback)(
 		traversePost(node->right, callback);
 		callback(node);
 	}
+}
+RBTreeNodePointer leveretconey::RBTree::getSuccessor(RBTreeNodePointer node)
+{
+	if (node == nil)
+		return nil;
+	if (node->left == nil || node->right == nil)
+		return nil;
+	node = node->right;
+	while (node->left != nil ) {
+		node = node->left;
+	}
+	return node;
 }
 void leveretconey::RBTree::insert(int key)
 {
@@ -173,6 +251,11 @@ void leveretconey::RBTree::insert(int key)
 	adjustInsert(newNode);
 }
 
+bool leveretconey::RBTree::isEmpty()
+{
+	return root == nil;
+}
+
 void printNode(RBTreeNodePointer node) {
 	cout << " " << node->key << "(" << node->color << ") ";
 }
@@ -199,7 +282,38 @@ void leveretconey::RBTree::del(RBTreeNodePointer node)
 	if (node == nil) {
 		return;
 	}
-
+	RBTreeNodePointer victim, victimSon;
+	if (node->left == nil || node->right == nil) {
+		victim = node;
+	}
+	else {
+		victim = getSuccessor(node);
+	}
+	if (victim->left != nil) {
+		victimSon = victim->left;
+	}
+	else {
+		victimSon = victim->right;
+	}
+	victimSon->parent = victim->parent;
+	if (victim->parent == nil) {
+		root = victimSon;
+	}
+	else {
+		if (victim == victim->parent->left)
+			victim->parent->left = victimSon;
+		else
+			victim->parent->right = victimSon;
+	}
+	if (node != victim) {
+		node->key = victim->key;
+	}
+	//算法导论是没有错的，是我比较呆逼
+	victimSon->color = BLACK;
+	if (victim->color == BLACK) {
+		adjustDelete(victimSon);
+	}
+	delete victim;
 }
 RBTreeNodePointer leveretconey::RBTree::search(int key)
 {
@@ -254,6 +368,7 @@ RBTree::RBTree()
 {
 	nil = new RBTreeNode;
 	nil->color = BLACK;
+	nil->parent = nil->left = nil->right = nil;
 	root = nil;
 }
 
