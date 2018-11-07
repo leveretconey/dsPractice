@@ -28,8 +28,10 @@ namespace leveretconey {
 		void traversePre(RBTreeNodePointer node, void(*callback)(RBTreeNodePointer));
 		void traverseIn(RBTreeNodePointer node, void(*callback)(RBTreeNodePointer));
 		void traversePost(RBTreeNodePointer node, void(*callback)(RBTreeNodePointer));
+		int getBlackHeight(RBTreeNodePointer node,bool &valid);
 	public:
 		void insert(int key);
+		bool isValid();
 		bool isEmpty();
 		void show();
 		RBTreeNodePointer getNil();

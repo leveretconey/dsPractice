@@ -185,6 +185,7 @@ void leveretconey::RBTree::adjustDelete(RBTreeNodePointer node)
 			}
 		}
 	}//while
+	node->color = BLACK;
 }
 void leveretconey::RBTree::traversePre(RBTreeNodePointer node, void(*callback)(RBTreeNodePointer))
 {
@@ -209,6 +210,22 @@ void leveretconey::RBTree::traversePost(RBTreeNodePointer node, void(*callback)(
 		traversePost(node->right, callback);
 		callback(node);
 	}
+}
+int leveretconey::RBTree::getBlackHeight(RBTreeNodePointer node, bool & valid)
+{
+	if (node == nil) {
+		valid = true;
+		return 0;
+	}
+	bool validl, validr;
+	int hl = getBlackHeight(node->left, validl);
+	int hr = getBlackHeight(node->right, validr);
+	valid = true;
+	if (hl != hr)
+		valid = false;
+	if (node->color == RED && (node->left->color == RED || node->right->color == RED))
+		valid = false;
+	return (hl>hr?hl:hr) + (node->color == BLACK ? 1 : 0);
 }
 RBTreeNodePointer leveretconey::RBTree::getSuccessor(RBTreeNodePointer node)
 {
@@ -249,6 +266,17 @@ void leveretconey::RBTree::insert(int key)
 			pp->right = newNode;
 	}
 	adjustInsert(newNode);
+}
+
+bool leveretconey::RBTree::isValid()
+{
+	if (root == nil)
+		return true;
+	if (root->color == RED)
+		return false;
+	bool valid;
+	getBlackHeight(root,valid);
+	return valid;
 }
 
 bool leveretconey::RBTree::isEmpty()
@@ -309,9 +337,9 @@ void leveretconey::RBTree::del(RBTreeNodePointer node)
 		node->key = victim->key;
 	}
 	//算法导论是没有错的，是我比较呆逼
-	victimSon->color = BLACK;
 	if (victim->color == BLACK) {
-		adjustDelete(victimSon);
+		//if (victimSon == nil)
+			adjustDelete(victimSon);
 	}
 	delete victim;
 }

@@ -25,11 +25,12 @@ int main()
 		tree.show();
 	}
 	*/
+	Timer timer;
 	for (int i = 1; i <= 10000; i++) {
 		RBTree tree;
-		vector<int> v(20);
-		for (int i = 0; i < 20; i++) {
-			v[i] = i + 1;
+		vector<int> v;
+		for (int i = 0; i < 100; i++) {
+			v.push_back(i + 1);
 		}
 		shuffle(v.begin(), v.end(), default_random_engine(i));
 		for (int i : v) {
@@ -38,16 +39,16 @@ int main()
 		//tree.show();
 		shuffle(v.begin(), v.end(), default_random_engine(11));
 		for (int i : v) {
-		//	cout << "del " << i << " :";
+			//cout << "del " << i << " :";
 			tree.del(i);
-		//	tree.show();
+			//tree.show();
+			if (!tree.isValid())
+			{
+				cout << "break! "<<i;
+				break;
+			}
 		}
-		if (!tree.isEmpty()) {
-			cout << i;
-			break;
-		}
-		cout << i;
-		//tree.show();
 	}
+	timer.ShowTime();
 	return 0;
 }
